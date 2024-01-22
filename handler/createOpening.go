@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/willianrr/hotspot-go/schemas"
+	"github.com/willianrr/hotspot-instance/schemas"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,21 +19,20 @@ func CreateOpeningHandler(ctx *gin.Context) {
 		return
 	}
 
-	opening := schemas.Opening {
-		Role: request.Role,
-		Company: request.Company,
+	opening := schemas.Opening{
+		Role:     request.Role,
+		Company:  request.Company,
 		Location: request.Location,
-		Remote: *request.Remote,
-		Link: request.Link,
-		Salary: request.Salary,
+		Remote:   *request.Remote,
+		Link:     request.Link,
+		Salary:   request.Salary,
 	}
 
-	if err := db.Create(&opening).Error; err!= nil {
+	if err := db.Create(&opening).Error; err != nil {
 		logger.ErrorF("Error create opening: %v", err.Error())
 		sendError(ctx, http.StatusInternalServerError, "error creating opening on database")
 		return
 	}
-
 
 	sendSuccess(ctx, "create-opening", opening)
 }

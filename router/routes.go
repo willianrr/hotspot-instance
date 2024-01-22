@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/willianrr/hotspot-go/handler"
+	"github.com/willianrr/hotspot-instance/handler"
 
 	"github.com/gin-gonic/gin"
 )

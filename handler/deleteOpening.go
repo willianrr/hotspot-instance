@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/willianrr/hotspot-go/schemas"
+	"github.com/willianrr/hotspot-instance/schemas"
 
 	"github.com/gin-gonic/gin"
 )

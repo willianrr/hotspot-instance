@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/willianrr/hotspot-go/schemas"
+	"github.com/willianrr/hotspot-instance/schemas"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,7 +15,7 @@ func UpdateOpeningHandler(ctx *gin.Context) {
 
 	if err := request.Validate(); err != nil {
 		logger.ErrorF("validation error: %v", err.Error())
-		sendError(ctx, http.StatusBadRequest,err.Error())
+		sendError(ctx, http.StatusBadRequest, err.Error())
 		return
 	}
 

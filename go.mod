@@ -1,4 +1,4 @@
-module github.com/willianrr/hotspot-go
+module github.com/willianrr/hotspot-instance
 
 go 1.21.4
 
